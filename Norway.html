@@ -1,0 +1,498 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <meta name="Description" content="Enter your description here"/>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@100..900&family=Noto+Serif+SC:wght@200..900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">	
+  
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.6.0/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+  <link rel="stylesheet" href="assets/css/style.css">
+
+	<style>
+
+	#Btn{
+			 display: none;
+			position: fixed;
+			bottom: 20px;
+			right: 25px;
+			z-index: 100;
+			font-size: 12px; 
+			font-family: "MS PGothic", "PingFang SC", sans-serif; 
+			font-weight: bold;
+			border: 2px solid #fff; 
+			outline: none;
+			background-color: #ff6b9d; 
+			color: white;
+			cursor: pointer;
+			padding: 8px 12px; 
+			border-radius: 20px;
+			box-shadow: 0 4px 0 #c44569; 
+			transition: all 0.1s ease;
+		}
+
+		#Btn:hover{
+			background-color: #ff85b3;
+    		transform: translateY(-2px);
+		}
+
+		#Btn:active {
+		transform: translateY(2px);
+		box-shadow: 0 2px 0 #c44569;
+		}
+
+	
+	.noto-serif-tc {
+		font-family: "Noto Serif TC", serif
+	}
+
+	
+	.noto-serif-sc {
+ 		font-family: "Noto Serif SC", serif;
+	}		
+
+	body {
+  		font-family: "Noto Serif TC", "Noto Serif SC", serif;
+		font-size: 16px;
+		font-weight: 400; 
+		line-height: 1.8; 
+		letter-spacing: 0.3px; 
+		font-synthesis: none; 
+		padding: 0;
+		position: relative;
+		min-height: 100vh;
+		text-shadow: 0 1px 2px rgba(60, 50, 40, 0.08),
+					 0 0 1px rgba(255, 255, 255, 0.15),
+					 0 0 4px rgba(255, 255, 255, 0.05);
+		margin: 0;
+		color: #ecd9d9; 
+		text-rendering: optimizeLegibility;
+	}
+
+	body::before{
+		content: "";
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+		background-image: url('img/Night01.jpg');
+		background-size: cover;
+		background-position: center;
+		background-attachment: fixed;
+		opacity : 1;
+		z-index: -1;
+		pointer-events: none;
+	}
+
+	.mainintro:hover{
+		box-shadow: 0 8px 30px rgb(141, 125, 125);
+	}
+
+	.mainintro{
+		position: relative;
+		width: 100%;
+		height: 10vh;
+		
+	}
+
+	.mainintro img{
+		position: relative;
+		width: 100%;
+		height: 100%;
+		object-fit: cover;
+		display: block;
+		border-radius: 6px;
+		box-shadow: 0 8px 25px rgba(0,0,0,0.2);
+		border: 1px solid rgba(255, 255, 255,0.25);
+		opacity:1;
+	}
+	
+	.mainintrotext{
+		position: relative;		
+		text-align: center;
+		margin: 0 auto ;
+		height: fit-content;
+		bottom: 70%;
+		color: rgb(214, 124, 223)
+		text-shadow: 0 1px 2px rgba(60, 50, 40, 0.08),
+						
+	}
+
+	.h2-heading{
+		text-align: center;
+		font-family: "Noto Serif TC", "Noto Serif SC", serif;
+		color:rgb(255, 255, 255); 
+		text-shadow: 
+			0 1px 1px rgba(80, 30, 60, 0.2),
+			0 0 3px rgba(217, 140, 179, 0.2);
+	}
+
+	.displayframe {
+		border: 1px solid rgba(91, 226, 136, 0.959); 
+		border-radius: 12px; 
+		padding: 2px; 
+		margin: 0 15px; 
+		background-color: rgba(255, 255, 255, 0.02); 
+		box-shadow: 0 10px 40px rgba(0,0,0,0.1); 
+	}
+
+	.displaypart {
+		position: relative;
+		height: 260px;
+		width: 300px;
+		object-fit: cover;
+		overflow: hidden;
+		border-radius: 6px;
+		box-shadow: 0 8px 25px rgba(0,0,0,0.2);
+		border: 1px solid rgba(255, 255, 255,0.25);
+		transition: width 1s, height 1s;
+		cursor: pointer;  ;
+		z-index: 1; 
+	}
+
+	.displaypart img {
+		width: 100%;
+		height: 100%;
+		object-fit: cover;
+		transition: width 1s, height 1s, background-color 1s;
+		object-position: center center;
+		
+	}
+		
+	
+
+	.displaypart:hover{
+		transform: translateY(-8px);
+		width: 400px;
+		height: 360px;
+		object-fit: cover;
+		box-shadow: 0 15px 35px rgba(46, 125, 50, 0.2)
+	}
+
+	.h2-normal{
+		font-size: 32px;
+  		font-weight: 700;
+  		letter-spacing: 0.5px; 
+  		color: #f8e0e0; 
+  		margin-bottom: 12px;
+  		line-height: 1.3;
+		font-family:"Noto Serif TC","Noto Serif SC", serif;
+		font-synthesis: none;
+		text-align: center;
+	}
+
+
+	.p-normal{
+		font-size: 18px;
+		font-weight: 400;
+		max-width: 100%;
+		color: #f5ebeb;
+		font-family:"Noto Serif TC", "Noto Serif SC",serif;
+		margin:0 auto;
+		padding: 0 15px;
+	}
+
+	.travel{
+		position: relative;
+		width: 100%;
+		border-radius: 12px;
+		box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+		border: 1px solid #ffcccc;
+		overflow: hidden;
+
+	}
+
+	.travel img{
+        padding: 24px;
+		width: 100%;
+		height: 60vh;
+		object-fit: cover;
+		border-radius: 8px;
+	}
+
+	.ul li{
+		color:rgb(255, 255, 255)
+	}
+
+
+  </style>
+
+  <title>夢幻之旅挪威篇</title>
+
+</head>
+<body>
+  <header>
+		<nav class="navbar navbar-expand-md bg-light navbar-light">
+			<a class="navbar-brand" href="index.html">主頁</a>
+		
+			<ul class="navbar-nav">
+			<li>
+				<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+					<span class="navbar-toggler-icon"></span>
+				</button>
+
+						<div class="collapse navbar-collapse" id="collapsibleNavbar">
+							<ul class="navbar-nav">
+							<li class="nav-item">
+								<a class="nav-link" href="zengcheng.html">
+									中國增城
+								</a>
+							</li>
+							<li class="nav-item">
+								<a class="nav-link" href="akiba.html">
+									日本秋葉原
+								</a>
+							</li>
+							<li class="nav-item">
+								<a class="nav-link" href="Norway.html">
+									挪威
+								</a>
+							</li>
+							<li class="nav-item">
+								<a class="nav-link" href="Xinjiang.html">
+									中國新疆
+								</a>
+							</li>    
+							</ul>
+						</div>  
+						
+			</li>
+			</ul>
+		</nav>
+	</header>
+
+	<main>
+		<section>
+			<div class="container-fluid px-0">
+				<div class="mainintro">
+					<img src="img/Norway01.jpg" alt="Norway01">
+						<div class="mainintrotext">
+							<h2 class="h2-heading">挪威蓋朗厄爾峽灣——世界遺產級海岸峽灣</h2>
+						</div>
+				</div>
+			</div>
+
+		</section>
+		<br>
+		<section>
+				<div class="container-fluid px-0">
+					<div class="displayframe">
+						<div class="row">
+							<div class="col-12 col-md-6 col-lg-4 mb-4">
+
+								<div class="displaypart">
+									<img src="img/Norway02.jpg" alt="秋葉原03">
+								</div>	
+							</div>
+							<div class="col-12 col-md-6 col-lg-4 mb-4">
+								<div class="displaypart">
+								<img src="img/Norway03.jpg" alt="秋葉原">
+								</div>
+							</div>
+							<div class="col-12 col-md-6 col-lg-4 mb-4">
+								<div class="displaypart">
+								<img src="img/Norway04.jpg" alt="秋葉原05">
+							</div>
+						</div>
+					</div>
+				</div>
+
+
+		</section>
+		<hr>
+		<section>
+			<div class="container">
+				<div class="displayframe">
+					<video controls width="100%"
+					style = "height:500px; 
+                            object-fit: cover;"
+					poster = "img/Norway05.jpg">
+						<source src="video/Norway01.mp4" type="video/mp4">
+					</video>	
+				</div>
+			</div>
+		</section>
+		<hr>
+		<section>
+			<div class="container">
+				<div class="travel">
+					<h2 class="h2-normal">蓋朗厄爾(Geirangerfjord)：山海的垂直史詩</h2>
+					<p class="p-normal">
+						蓋朗厄爾的源起，要追溯到二百五十萬年前的更新世。彼時挪威西部覆著厚達兩三公里的冰川，如天然冰刃沿山體緩移，硬生生將起伏山巒刻出U型深谷。約一萬年前氣候回暖，冰川退卻，海水倒灌入谷，遂成全長15公里、兩岸垂直落差最高1400米的峽灣，水下仍深延500米，「山海垂直相依」的地貌由此定型。
+						峽灣盡頭的蓋朗厄爾村僅住著兩百餘人，融雪自峭壁奔湧而下，才有了七姐妹、新娘面紗等瀑布——這部宏大的地質史，最終落成了幾簇飛濺的水痕。當最後一抹冰川融水匯入峽灣，這部宏大地質史的扉頁剛合，人類活動的墨跡便順著岩縫落了下來。
+						約公元前後的鐵器時代，第一批先民順著峽灣的走向遷徙至此——這片「山海垂直相依」的地貌，既提供了峽灣裡取之不竭的漁獲，陡峭山坡上稀疏卻肥美的草場，也足夠放牧山羊與綿羊；而全長15公里、最窄處不足500公尺的天然深水灣，更是躲避北海風浪的絕佳港埠，恰好滿足了早期聚落「靠海吃海、依山牧畜」的生存需求。
+						到了8世紀維京時代，蓋朗厄爾峽灣憑藉隱蔽狹長的地形，成了維京長船的重要據點。考古出土的船形石棺與刻有北歐符文的石碑，至今還留在峽灣中段的聖奧拉夫教堂遺址裡，見證著當年維京人揚帆遠航前的祭禱儀式。為了拓展生存空間，先民們沿著千米高的岩壁攀爬，在險峻的坡面上辟出懸崖農場，石砌的羊圈、歪斜的木柵欄，還有纏滿野玫瑰的籬笆，成了後來Skageflå、Knivsflå等農場遺跡的前身，也把人類活動的痕跡，牢牢刻進了峽灣的垂直肌理之中。
+						千百年來，漁舟的槳聲、牧羊人的吆喝、維京人的號子，都順著風飄落在七姐妹瀑布的水霧裡，讓這片原本只有冰與海的地質空間，慢慢有了煙火氣。
+					</p>
+				</div>
+			</div>
+
+
+		</section>
+
+	<section>
+		<hr>
+		<h2 class="h2-normal">蓋朗厄爾村(Geiranger)</h2>	
+		<div class="container">
+			<div class="travel">
+				<img src="img/geiranger01.jpg" alt="蓋朗厄爾村">
+			</div>
+			<p class="p-normal"><b>——來到挪威，看一看當地最美麗的峽灣:蓋朗厄爾峽灣(Geirangerfjord)，逛一逛這裏的蓋朗厄爾村（Geiranger）。</p></b>
+			<div class="displayframe">
+				
+				<p class="p-normal">蓋朗厄爾村（Geiranger）是聯合國教科文組織世界自然遺產「西挪威峽灣」的核心聚落，
+					坐落於蓋朗厄爾峽灣（Geirangerfjord）最內側的盡頭，常住人口僅約200人，
+					是進入這片全球罕見「垂直峽灣」的唯一陸上落腳點，也是《國家地理》評選的「挪威必去TOP10」目的地。
+					游客可從奧勒松（Ålesund）自駕2.5小時抵達，或搭乘夏季限定的UNESCO峽灣巴士前往。</p>
+			</div> 
+			<hr>
+				
+				<h3 class="h2-normal">蓋朗厄爾村 Geiranger：峽灣盡頭的獨一份體驗</h3>
+
+				<div class ="displayframe">
+					<p class="p-normal">蓋朗厄爾峽灣全長約15公里，水深最處達260公尺，兩岸山峰聳立至海拔1600–1700公尺——這樣極致的「山海垂直地貌」，在地球上幾乎無處可尋。而蓋朗厄爾村，
+						剛好坐落在這幅山海史詩的畫框正中：走出村口，正面是翡翠色的峽灣水面；抬頭往北岸看，就是挪威最著名的自然地標「七姐妹瀑布」。
+						村子的珍貴之處在於：它既是一個活著的北歐村落，也是進入峽灣奇觀的天然基地。這裡有1842年建成的蓋朗厄爾峽灣教堂，原木結構靜謐古樸；
+						有提供互動裝置與3D投影的挪威峽灣中心（Norwegian Fjord Centre），系統講述這片土地的地質史、維京人居留史與世界遺產價值，
+						是探索峽灣前最佳的知識起點。
+					</p>
+
+					<h3 class="h2-normal">蓋朗厄爾村(Geiranger)：世界遺產峽灣的童話口岸</h3>
+					<p class="p-normal">蓋朗厄爾村（Geiranger）位於峽灣最內陸的頂端，常住人口僅約兩百餘人。村子被群山環抱，只有一條長約 1000 公尺的盤山公路對外連接，夏季徒步而來的遊客絡繹不絕。
+									<br>
+									1.🚢 峽灣遊船｜水上近距離觀瀑
+									<br>
+									從蓋朗厄爾村（Geiranger）碼頭登船，是公認欣賞蓋朗厄爾峽灣（Geirangerfjord）的最佳方式。遊船會貼著北岸滑行，直接駛入七姐妹瀑布（De syv søstre）的水霧範圍——這座250公尺落差的瀑布是峽灣的標誌性景觀，晴天水霧中會自然形成彩虹；對岸的求婚者瀑布（Friaren）永遠朝向七姐妹，是當地流傳百年的浪漫傳說。航程還會經過崖壁上的Skageflå懸崖農場遺跡，是其他峽灣無法複製的近距離體驗。
+									<br>
+									2.⛪ 蓋朗厄爾教堂｜峽灣盡頭的19世紀木教堂
+									<br>
+									村內的蓋朗厄爾教堂（Geiranger Church）建於1842年，是八角形木構教堂，座位約120席。教堂位於山坡上，提供周圍景觀和峽灣的壯麗景色，庭院的寧靜氛圍增添了它的魅力，是峽灣盡頭最具歷史重量的建築，也是拍照漫步的寧靜首選。
+									<br>
+									3.🏛 挪威峽灣中心｜世界遺產的室內百科
+									<br>
+									位於村內的挪威峽灣中心（Norwegian Fjord Centre）是蓋朗厄爾峽灣世界遺產的官方訪客中心。常設展覽「Geirangerfjord Nature & Culture」通過互動裝置講述峽灣地貌如何由冰川雕琢而成、當地動植物如何適應極限環境，以及2005年UNESCO登錄的世界遺產價值；UNESCO展區「From Norway to the World」則帶你一次認識挪威八處世界遺產。戶外還有青銅雕塑群「History of the Fjord People」，重現昔日峽灣農人的生活場景，中心內設有咖啡館與販售永續挪威商品的商店，是探索峽灣前最佳的知識起點。
+									<br>
+									4.🏔 達爾斯尼巴展望台｜1500公尺高的U型全景
+									<br>
+									沿老鷹之路開車盤旋而上，抵達海拔1500公尺的達爾斯尼巴展望台（Dalsnibba）——歐洲少數可駕車直達的超高觀景點。360度環視下，翡翠色峽灣像U型絲帶嵌在群山間，連遠處的終年雪頂都清晰可見。不用徒步就能拿下全峽灣的頂級機位，是「開車登頂、把峽灣裝進口袋」的獨一份體驗。
+									5.🪑 弗里達爾斯尤維觀景台｜挪威最著名的攝影點之一
+									<br>
+									距離村子約4公里的弗里達爾斯尤維觀景台（Flydalsjuvet），是挪威最著名的觀光景點之一。這裡有免費停車場和乾淨的廁所，正對峽灣的皇后之椅（Fjordsetet）擁有絕佳角度可以正面俯瞰蓋朗厄爾峽灣；一旁的Flydalsjuvet Rock更可以讓人走到懸挑於半空的岩石平台上，拍出令人讚嘆的照片。這裡的遊客相對少了許多，安靜的感覺讓人能慢慢欣賞峽灣的壯闊美景。
+									<br>
+									6.🌊 七姐妹瀑布｜峽灣的靈魂地標
+									<br>
+									從村子碼頭抬頭往北岸看，就是蓋朗厄爾峽灣最標誌性的景觀——七姐妹瀑布（De syv søstre）。七道水流並排從約250公尺高的懸崖傾瀉而下，宛如七位姐妹的長髮並排垂落，直接墜入峽灣海面；對岸的求婚者瀑布（Friaren）永遠望向七姐妹，是峽灣裡最浪漫的民間故事。夏季雪融水量最大，七股水流齊奔的場面最為震撼，是每個到訪蓋朗厄爾的旅客必看的「山海垂直史詩」主角。
+					
+					</p>
+				</div>
+			<hr>
+			<h3 class="h2-normal">蓋朗厄爾村(Geiranger)資訊</h3>
+
+			<div class="displayframe">	
+				<p class="p-normal">Tips:<br>
+					最佳遊覽期：6-8月，瀑布水量最大、所有觀景道路全開，遊船每日運營
+					<br>
+					預訂提醒：旺季（7-8月）遊船、橫渡渡輪的車位需提前在線預訂，達爾斯尼巴展望台的停車場中午易滿位
+					<br>
+					裝備建議：即使夏季，山頂氣溫僅10℃左右，需攜帶防風防水外套；徒步建議穿防滑運動鞋
+					<br>
+					小眾技巧：清晨9點前或傍晚6點後前往觀景台，能避開旅行團人潮，拍到無人的峽灣全景</p>
+				<ul>
+					<li class="p-normal">📍 地址</li>
+					<p class="p-normal">6216 Geiranger, Stranda, Møre og Romsdal, 挪威（遊客中心：Geirangervegen 2）。</p>
+					<li class="p-normal">🚃 交通</li>
+					<p class="p-normal">從奧勒松（Ålesund）或翁達爾斯內斯（Åndalsnes）搭乘 FRAM 巴士約 3 小時；夏季可搭 Hurtigruten 渡輪從奧勒松往返；自駕沿 63 號公路「老鷹之路」即可抵達村內。</p>
+					<li class="p-normal">🕙 營業時間</li>
+					<p class="p-normal">蓋朗厄爾村與峽灣為開放式戶外目的地，24 小時全年無休、免費進入；村內遊客中心（Visit Geiranger）夏季（5 月至 9 月）在港口新址開放，淡季移至挪威峽灣中心（Norwegian Fjord Centre），週一至週六 10:00-15:00。</p>
+					<li class="p-normal">🎌 休息日</li>
+					<P class="p-normal">村內主要景點（教堂、挪威峽灣中心、觀景台等）多為季節性營運：冬季部分道路（如通往達爾斯尼巴展望台、精靈之路）會封閉，遊客中心也會縮短時段或併入挪威峽灣中心營運；建議出發前查閱官方最新公告。</p>
+				</ul>
+			</div>
+		</div>
+	</section>
+	
+	<button onclick="topFunction()" id="Btn" title="Go to top">
+			Top
+	</button>
+	
+	</main>
+	<footer class="bg-body-tertiary border-top pt-4 pb-2 mt-5">
+		<div class="container">
+		  <div class="row gy-3 align-items-center">
+	  
+			<!-- 聯絡方式 -->
+			<div class="col-md-6">
+			  <h6 class="fw-bold mb-2">聯絡我們</h6>
+			  <p class="mb-1">
+				<i class="bi bi-geo-alt-fill me-2"></i>香港曼波街 114號 哈基米大廈 5F No.14 Room
+			  </p>
+			  <p class="mb-1">
+				<i class="bi bi-telephone-fill me-2"></i>+852 1919 8100
+			  </p>
+			  <p class="mb-0">
+				<i class="bi bi-envelope-fill me-2"></i>@lovecat.hk
+			  </p>
+			</div>
+	  
+			<!-- 社交軟件圖標 -->
+			<div class="col-md-6 text-md-end">
+			  <h6 class="fw-bold mb-2">關注我們</h6>
+			  <a href="#" class="text-reset me-3 fs-5" aria-label="Facebook">
+				<i class="bi bi-facebook"></i>
+			  </a>
+			  <a href="#" class="text-reset me-3 fs-5" aria-label="Instagram">
+				<i class="bi bi-instagram"></i>
+			  </a>
+			  <a href="#" class="text-reset me-3 fs-5" aria-label="WhatsApp">
+				<i class="bi bi-whatsapp"></i>
+			  </a>
+			  <a href="#" class="text-reset me-3 fs-5" aria-label="Line">
+				<i class="bi bi-line"></i>
+			  </a>
+			  <a href="#" class="text-reset fs-5" aria-label="WeChat">
+				<i class="bi bi-wechat"></i>
+			  </a>
+			</div>
+	  
+		  </div>
+	  
+		  <div class="text-center fw-bold fs-5">
+			© 2026 Designed & Developed by Haruka Bowie. Build with Bootstrap. All rights reserved.
+		  </div>
+		</div>
+
+
+	</footer>
+	
+  
+
+<script>
+		let mybtn = document.getElementById("Btn"); 
+		window.onscroll = function() {scrollFunction()};
+
+		function scrollFunction() {
+		if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+			mybtn.style.display = "block";
+		} else {
+			mybtn.style.display = "none";
+		}
+		}
+		function topFunction() {
+		document.body.scrollTop = 0;
+		document.documentElement.scrollTop = 0;
+		}
+</script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.slim.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.1/umd/popper.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.6.0/js/bootstrap.min.js"></script>
+</body>
+</html>

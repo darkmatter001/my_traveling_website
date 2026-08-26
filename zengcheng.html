@@ -1,0 +1,467 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <meta name="Description" content="Enter your description here"/>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@100..900&family=Noto+Serif+SC:wght@200..900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">		
+
+  <style>
+
+	#Btn{
+		display: none;
+		position: fixed;
+		bottom: 20px;
+		right: 25px;
+		z-index: 100;
+		font-size: 12px; 
+		font-family: "MS PGothic", "PingFang SC", sans-serif; 
+		font-weight: bold;
+		border: 2px solid #fff; 
+		outline: none;
+		background-color: #ff6b9d; 
+		color: white;
+		cursor: pointer;
+		padding: 8px 12px; 
+		border-radius: 20px;
+		box-shadow: 0 4px 0 #c44569; 
+		transition: all 0.1s ease;
+		}
+
+	#Btn:hover{
+			background-color: #ff85b3;
+    		transform: translateY(-2px);
+		}
+
+	#Btn:active {
+		transform: translateY(2px);
+		box-shadow: 0 2px 0 #c44569;
+		}
+
+	
+	.noto-serif-tc {
+		font-family: "Noto Serif TC", serif
+	}
+
+	
+	.noto-serif-sc {
+ 		font-family: "Noto Serif SC", serif;
+	}		
+
+	body {
+		position: relative;
+  		font-family: "Noto Serif TC", "Noto Serif SC", serif;
+		font-size: 16px;
+		font-weight: 400; 
+		line-height: 1.8; 
+		letter-spacing: 0.3px; 
+		color: #000000;
+		font-synthesis: none; 
+		padding: 0;
+	}
+
+	body::before{
+		content: "";
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+		background-image: url('img/zc02.jpg');
+		background-size: cover;
+		background-position: center;
+		background-attachment: fixed;
+		opacity : 0.55;
+		z-index: -1;
+		pointer-events: none;
+	}
+
+	.mainintro:hover{
+		box-shadow: 0 8px 30px rgb(141, 125, 125);
+	}
+
+	.mainintro{
+		position: relative;
+		width: 100%;
+		height: 10vh;
+		
+	}
+
+	.mainintro img{
+		position: relative;
+		width: 100%;
+		height: 100%;
+		object-fit: cover;
+		display: block;
+		border-radius: 6px;
+		box-shadow: 0 8px 25px rgba(0,0,0,0.2);
+		border: 1px solid rgba(255, 255, 255,0.25);
+	}
+	
+	.mainintrotext{
+		position: relative;		
+		text-align: center;
+		margin: 0 auto ;
+		height: fit-content;
+		bottom: 70%;
+		color: #f5f5dc;
+		text-shadow: 0 2px 5px rgba(46, 125, 50, 0.8),
+					 0 4px 15px rgba(0, 0, 0, 0.3); 	
+	}
+
+	.displayframe {
+		border: 1px solid rgba(91, 226, 136, 0.959); 
+		border-radius: 12px; 
+		padding: 2px; 
+		margin: 0 15px; 
+		background-color: rgba(255, 255, 255, 0.02); 
+		box-shadow: 0 10px 40px rgba(0,0,0,0.1); 
+	}
+
+	.displaypart {
+		position: relative;
+		height: 260px;
+		width: 300px;
+		object-fit: cover;
+		overflow: hidden;
+		border-radius: 6px;
+		box-shadow: 0 8px 25px rgba(0,0,0,0.2);
+		border: 1px solid rgba(255, 255, 255,0.25);
+		transition: width 1s, height 1s;
+		cursor: pointer;  ;
+		z-index: 1; 
+	}
+
+	.displaypart img {
+		width: 100%;
+		height: 100%;
+		object-fit: cover;
+		transition: width 1s, height 1s, background-color 1s;
+		object-position: center center;
+		
+	}
+		
+	
+
+	.displaypart:hover{
+		transform: translateY(-8px);
+		width: 400px;
+		height: 360px;
+		object-fit: cover;
+		box-shadow: 0 15px 35px rgba(46, 125, 50, 0.2)
+	}
+
+
+
+	.h2-normal{
+		font-size: 32px;
+  		font-weight: 700;
+  		letter-spacing: 0.5px; 
+  		color: #013a14;
+  		margin-bottom: 12px;
+  		line-height: 1.3;
+		font-family:"Noto Serif TC", "Noto Serif SC", serif;
+		font-synthesis: none;
+		text-align: center;
+	}
+
+	.p-normal{
+		font-size: 18px;
+		font-weight: 400;
+		max-width: 100%;
+		color: #013a14;
+		font-family:"Noto Serif TC", "Noto Serif SC",serif;
+		margin:0 auto;
+		padding: 0 15px;
+	}
+
+	.travel{
+		position: relative;
+		width: 100%;
+		border-radius: 12px;
+		box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+		border: 1px solid #ffcccc;
+		overflow: hidden;
+
+	}
+
+	.travel img{
+        padding: 24px;
+		width: 100%;
+		height: 60vh;
+		object-fit: cover;
+		border-radius: 8px;
+	}
+
+
+
+
+  </style>
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.6.0/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+  <link rel="stylesheet" href="assets/css/style.css">
+  <title>夢幻之旅增城篇</title>
+</head>
+<body>
+  <header>
+		<nav class="navbar navbar-expand-md bg-light navbar-light">
+			<a class="navbar-brand" href="index.html">主頁</a>
+		
+			<ul class="navbar-nav">
+			<li>
+				<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+					<span class="navbar-toggler-icon"></span>
+				</button>
+
+						<div class="collapse navbar-collapse" id="collapsibleNavbar">
+							<ul class="navbar-nav">
+							<li class="nav-item">
+								<a class="nav-link" href="zengcheng.html">
+									中國增城
+								</a>
+							</li>
+							<li class="nav-item">
+								<a class="nav-link" href="akiba.html">
+									日本秋葉原
+								</a>
+							</li>
+							<li class="nav-item">
+								<a class="nav-link" href="Norway.html">
+									挪威
+								</a>
+							</li>
+							<li class="nav-item">
+								<a class="nav-link" href="Xinjiang.html">
+									中國新疆
+								</a>
+							</li>    
+							</ul>
+						</div>  
+						
+			</li>
+			</ul>
+		</nav>
+	</header>
+
+	<main>
+		<section>
+			<div class="container-fluid px-0">
+				<div class="mainintro">
+					<img src="img/zcjls01.jpg" alt="荔湖公園">
+						<div class="mainintrotext">
+							<h2>何仙姑故里，掛綠荔枝鄉。</h2>
+						</div>
+				</div>
+			</div>
+
+		</section>
+		<br>
+		<section>
+				<div class="container-fluid px-0">
+					<div class="displayframe">
+						<div class="row">
+							<div class="col-12 col-md-6 col-lg-4 mb-4">
+
+								<div class="displaypart">
+									<img src="img/zcbsz02.jpg" alt="增城白水寨">
+								</div>	
+							</div>
+							<div class="col-12 col-md-6 col-lg-4 mb-4">
+								<div class="displaypart">
+								<img src="img/zc03.jpg" alt="這裏是一張圖">
+								</div>
+							</div>
+							<div class="col-12 col-md-6 col-lg-4 mb-4">
+								<div class="displaypart">
+								<img src="img/zclhgy02.jpg" alt="這裏是一張圖">
+							</div>
+						</div>
+					</div>
+				</div>
+
+
+		</section>
+		<hr>
+		<section>
+			<div class="container">
+				<div class="displayframe">
+					<video controls width="100%" 
+					style= "height:500px; 
+                        object-fit: cover;
+					    poster = "img/zc03.jpg";>
+						<source src="video/zcvideo.mp4" type="video/mp4">
+					</video>	
+				</div>
+			</div>
+		</section>
+		<hr>
+		<section>
+			
+			<div class="container">
+				<div class="travel">
+					<h2 class="h2-normal">荔鄉承仙澤，仙姑賜掛綠</h2>
+					<p class="p-normal">增城建县于东汉建安六年（公元201年），隶属南海郡，至今已有一千八百多年历史。其名一说取自《淮南子》“昆仑山有增城九重”之仙境，亦有源于增江或“增设一城”之说，皆为此地平添几分传奇底色。
+						作为八仙中唯一的女仙何仙姑的故乡，增城小楼镇仙桂村至今保留着清咸丰年间重修的何仙姑家庙，庙侧“仙源涓涓，饮者万年”的古井，诉说着唐代少女何秀姑食云母、拒婚飞升的传说。这份仙气，亦幻化为荔枝珍品挂绿——相传仙姑遗落的一根绿丝线，缠绕果上，成就了“红紫相间，一绿线直贯到底”的西园挂绿母树，使其成为增城独有的文化图腾。
+						今日增城，处处皆景。你可前往何仙姑文化旅游区寻仙踪，到挂绿广场瞻仰那株价值连城的母树；亦可登临白水寨风景名胜区，看中国大陆落差最大的瀑布——白水仙瀑从428.5米高空倾泻而下，传说这正是何仙姑不舍故土化身的白练。若逢初夏，漫山遍野的荔枝红透，除了珍贵的挂绿，更有糯米糍、桂味等佳品待君品尝；秋冬时节，增城迟菜心、丝苗米香气四溢，邀您体验“中国丝苗米之乡”的舌尖盛宴。
+						从千年古邑的厚重，到仙姑传说的飘逸，再到山水田园的馈赠，增城正以“仙姑故里，挂绿原乡”的热情，恭候您的到来。
+					</p>
+				</div>
+			</div>
+
+
+		</section>
+
+	<section>
+		<hr>
+		<h2 class="h2-normal">食在增城：朱村鷄飯</h2>	
+		<div class="container">
+			<div class="travel">
+				<img src="img/chicken-rice.jpg" alt="增城朱村瓦煲鷄飯">
+			</div>
+			<p class="p-normal"><b>——這一鍋朱村雞飯，是增城人守了百年“味覺密碼”。</p></b>
+			<div class="displayframe">
+				
+				<p class="p-normal">朱村雞飯的故事，始於清末朱村的萬畝稻田。相傳朱村有一貧苦人家之子要出門趕考，鄉鄰籌措盤纏相助。其母為答謝眾人，將家中僅有的雞宰殺切碎，加醬油蔥花調味，置於煮開的米飯上焗熟。米飯出鍋時雞香撲鼻，這道充滿鄉情的“送行之宴”從此在朱村紮了根。
+				<br>
+				另一個更接地氣的說法，出自朱村萬畝田的“睇田佬”（看水人）。農忙通宵守水，最頂肚的莫過於煮個味飯——捉一隻家養走地雞，斬件下鹽醬油薑絲，等大鍋米煮到起飯眼，連雞帶油倒進去焗一焗。深夜田基上，幾個人圍坐，每人扒上幾大碗，舒坦至極。“睇田佬”的一鍋雞飯，就這樣在田埂間飄香了上百年。
+				<br>
+				從鄉間灶頭到官方認證，這煲飯見證的，是增城人對「吃雞」這件事的極致講究。
+			</div> 
+			<hr>
+				
+				<h3 class="h2-normal">一煲飯的靈魂：雞中有飯香，飯中有雞味</h3>
+
+				<div class ="displayframe">
+					<p class="p-normal">朱村雞飯世代相傳的十字真言——“雞中有飯香，飯中有雞味”，靠的是實打實的硬功夫。</p>
+					<ul>
+						<li>雞要鮮</li><p class="p-normal">必須是增城本地農家走地雞，肉質緊實，雞味濃郁。斬件後先以純正花生油撈勻，過幾分鐘再加鹽、豉油、薑絲，少許生粉鎖住嫩滑。</p>
+						<li>米要靚</li><p class="p-normal">必須是正宗增城絲苗米——米粒纖細、晶瑩如玉，被譽為「米中碧玉」，是廣府煲仔飯的靈魂伴侶。</p>
+						<li>煮要慢</li><p class="p-normal">現點現做，至少等待30分鐘——這在快餐時代近乎「任性」。</p>
+					</ul>
+					<br>
+					<p class="p-normal">揭蓋瞬間，香氣撲鼻。</p>
+					<ul>
+						<li>米飯<b>金黃乾身</b>，粒粒分明，每一粒都裹著雞油的光澤，卻無油膩負擔；</li>
+						<li>雞肉<b>鮮嫩不柴</b>，咬下去滿口肉汁；</li>
+						<li>鍋底那層<b>金黃鍋巴</b>，酥脆噴香，是老食客必搶的精華；</li>
+						<li>蔥花一撒，淋上特製醬油，包你食過尋返味。</li>
+					</ul>
+
+					<p class="p-normal">“半隻雞肉配一鍋飯，直接啖完五碗不是夢。”有食客這樣形容。1994年，一位副廳長受邀到朱村吃雞飯，一桌廣州食客讚不絕口，幾位年輕女子平時很少吃超過一碗飯，那日竟都扒了兩三碗——臨走，廳長夫人還把沒吃完的雞飯連飯焦一併打包帶走。</p>
+
+					<p class="p-normal">來增城，訪何仙姑家廟，嘗掛綠荔枝，再赴朱村——等一煲雞飯30分鐘，換一口百年煙火。這份需要等待的美味，恰恰是預製菜時代最稀缺的誠意。
+					<br>	
+					<b>朱村雞飯，一碗飯裡的鄉愁，等你來嘗。</b></p>
+				</div>
+			<hr>
+			<h3 class="h2-normal">推薦朱村鷄飯飯店</h3>
+
+			<div class="displayframe">	
+				<p>Tips:節假日、休息日以及周五至周日，為用餐高峰期，出發前記得提前同餐廳前臺預約好用餐位置。</p>
+				<ul>
+					<li>香賓雞飯（朱村店）</li>
+					<p class="p-normal">🏠 廣州市增城區朱村街266號
+						🚇 21號線朱村站C口​ 步行約60米
+						<br>☎ 020-82854352 / 13527822703
+						<br>🕘 營業時間：09:00-21:00</p>
+					<li>品裕酒家·絲苗米雞飯（朱村店）</li>
+					<p class="p-normal">🏠 廣州市增城區朱村大道中278號
+						🚇 21號線朱村站D出口（步行約110米）
+						<br>☎ 020-82854260 / 18102728448
+						<br>🕘 營業時間：09:00-21:00（套餐活動期間午市11:00-14:00，晚市17:00-21:00）</p>
+					<li>粵香酒家（朱村店）</li>
+					<p class="p-normal">🏠 廣州市增城區朱村街朱村大道中258號
+						🚇 21號線朱村站C口旁（步行約199米，2分鐘）
+						<br>☎ 020-82854280
+						<br>🕘 營業時間：11:00-14:00，17:00-21:00</p>
+				</ul>
+			</div>
+	
+		</div>
+		
+	
+	</section>
+	<button onclick="topFunction()" id="Btn" title="Go to top">
+			Top
+	</button>
+
+
+	</main>
+	<footer class="bg-body-tertiary border-top pt-4 pb-2 mt-5">
+		<div class="container">
+		  <div class="row gy-3 align-items-center">
+	  
+			<!-- 聯絡方式 -->
+			<div class="col-md-6">
+			  <h6 class="fw-bold mb-2">聯絡我們</h6>
+			  <p class="mb-1">
+				<i class="bi bi-geo-alt-fill me-2"></i>香港曼波街 114號 哈基米大廈 5F No.14 Room
+			  </p>
+			  <p class="mb-1">
+				<i class="bi bi-telephone-fill me-2"></i>+852 1919 8100
+			  </p>
+			  <p class="mb-0">
+				<i class="bi bi-envelope-fill me-2"></i>@lovecat.hk
+			  </p>
+			</div>
+	  
+			<!-- 社交軟件圖標 -->
+			<div class="col-md-6 text-md-end">
+			  <h6 class="fw-bold mb-2">關注我們</h6>
+			  <a href="#" class="text-reset me-3 fs-5" aria-label="Facebook">
+				<i class="bi bi-facebook"></i>
+			  </a>
+			  <a href="#" class="text-reset me-3 fs-5" aria-label="Instagram">
+				<i class="bi bi-instagram"></i>
+			  </a>
+			  <a href="#" class="text-reset me-3 fs-5" aria-label="WhatsApp">
+				<i class="bi bi-whatsapp"></i>
+			  </a>
+			  <a href="#" class="text-reset me-3 fs-5" aria-label="Line">
+				<i class="bi bi-line"></i>
+			  </a>
+			  <a href="#" class="text-reset fs-5" aria-label="WeChat">
+				<i class="bi bi-wechat"></i>
+			  </a>
+			</div>
+	  
+		  </div>
+	  
+		  <div class="text-center fw-bold fs-5">
+			© 2026 Designed & Developed by Haruka Bowie. Build with Bootstrap. All rights reserved.
+		  </div>
+		</div>
+
+
+	</footer>
+	
+  
+
+<script>
+		let mybtn = document.getElementById("Btn"); 
+		window.onscroll = function() {scrollFunction()};
+
+		function scrollFunction() {
+		if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+			mybtn.style.display = "block";
+		} else {
+			mybtn.style.display = "none";
+		}
+		}
+		function topFunction() {
+		document.body.scrollTop = 0;
+		document.documentElement.scrollTop = 0;
+		}
+</script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.slim.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.1/umd/popper.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.6.0/js/bootstrap.min.js"></script>
+</body>
+</html>
